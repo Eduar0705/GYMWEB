@@ -1,0 +1,338 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Arial", sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+/* Header y navegación */
+header {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+section img{
+    height: 400px;
+    width: 600px;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+.nav-links li {
+    margin-left: 2rem;
+}
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.nav-links a:hover {
+    color: #ff4500;
+}
+.burger {
+    display: none;
+    cursor: pointer;
+}
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+/* Secciones principales */
+main {
+    margin-top: 80px;
+}
+section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+h1,h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+/* Hero section */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/placeholder.svg?height=600&width=1200")
+        no-repeat center center / cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+.cta-button {
+    display: inline-block;
+    background-color: #ff4500;
+    color: #fff;
+    padding: 0.8rem 2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #ff6a33;
+}
+
+/* Clases */
+.class-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+.class-card {
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+.class-card:hover {
+    transform: translateY(-5px);
+}
+.class-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.class-card h3,.class-card p {
+    padding: 1rem;
+}
+/* Instalaciones */
+.facilities-showcase {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.facilities-showcase img {
+    width: 50%;
+    border-radius: 10px;
+}
+.facilities-showcase ul {
+    list-style-type: none;
+}
+.facilities-showcase li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+.facilities-showcase li::before {
+    content: "✓";
+    color: #ff4500;
+    position: absolute;
+    left: 0;
+}
+/* Testimonios */
+.testimonial-carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 2rem;
+    padding: 1rem 0;
+}
+.testimonial {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    background-color: #f4f4f4;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.testimonial p {
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+/* Formulario de contacto */
+form {
+    display: grid;
+    gap: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+input,textarea,button {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+button {
+    background-color: #ff4500;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+button:hover {
+    background-color: #ff6a33;
+}
+/* Footer */
+footer {
+    background-color: #1a1a1a;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+/* Responsive design */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        background-color: #1a1a1a;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+}
+.nav-links li {
+    opacity: 0;
+}
+.burger {
+    display: block;
+}
+.facilities-showcase {
+    flex-direction: column;
+}
+.facilities-showcase img {
+    width: 100%;
+    }
+}
+.nav-active {
+    transform: translateX(0%);
+}
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+
+
+
+
+.membership-section {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 1rem;
+}
+.membership-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+.membership-card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.membership-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+.card-image {
+    height: 200px;
+    overflow: hidden;
+}
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+.membership-card:hover .card-image img {
+    transform: scale(1.1);
+}
+.card-content {
+    padding: 1.5rem;
+}
+.membership-card h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+.price {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #e74c3c;
+    margin-bottom: 1rem;
+}
+.price span {
+    font-size: 1rem;
+    font-weight: normal;
+    color: #7f8c8d;
+}
+ul {
+    list-style-type: none;
+    margin-bottom: 1.5rem;
+}
+li {
+    margin-bottom: 0.5rem;
+    color: #34495e;
+}
+.featured {
+    border: 2px solid #e74c3c;
+    transform: scale(1.05);
+}
+.featured:hover {
+    transform: scale(1.05) translateY(-10px);
+}
+@media (max-width: 768px) {
+    .membership-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .membership-card {
+        width: 100%;
+        max-width: 300px;
+    }
+    .featured {
+        transform: none;
+    }
+    .featured:hover {
+        transform: translateY(-10px);
+    }
+}
